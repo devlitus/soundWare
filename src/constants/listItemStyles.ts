@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { SonicColors, SonicSpacing, SonicTypography } from '@/constants/sonic';
+import { SonicColors, SonicRadius, SonicSpacing, SonicTypography } from '@/constants/sonic';
 
 export const listItemStyles = StyleSheet.create({
   container: {
@@ -8,6 +8,17 @@ export const listItemStyles = StyleSheet.create({
     alignItems: 'center',
     height: 64,
     paddingHorizontal: SonicSpacing.three,
+  },
+  indexColumn: {
+    width: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: SonicSpacing.two,
+  },
+  indexText: {
+    fontSize: SonicTypography.bodySm.fontSize,
+    fontWeight: SonicTypography.bodySm.fontWeight,
+    color: SonicColors['on-surface-variant'],
   },
   metadata: {
     flex: 1,
@@ -32,5 +43,11 @@ export const listItemStyles = StyleSheet.create({
     fontSize: SonicTypography.bodySm.fontSize,
     fontWeight: SonicTypography.bodySm.fontWeight,
     color: SonicColors['on-surface-variant'],
+    fontVariant: ['tabular-nums'],
+    minWidth: 58,
+  },
+  iconButton: {
+    padding: SonicSpacing.one,
+    borderRadius: SonicRadius.full,
   },
 });

@@ -1,4 +1,4 @@
-import { Audio, createAudioPlayer, type AudioPlayer } from 'expo-audio';
+import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import { create } from 'zustand';
 
 import type { CloudinaryAsset } from '@/types/cloudinary';
@@ -67,7 +67,7 @@ export const usePlaybackStore = create<PlaybackStore>((set, get) => ({
     if (!currentAsset) return;
 
     try {
-      await Audio.setAudioModeAsync({
+      await setAudioModeAsync({
         playsInSilentMode: true,
         shouldPlayInBackground: true,
         interruptionMode: 'doNotMix',

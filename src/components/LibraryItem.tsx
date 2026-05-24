@@ -1,12 +1,12 @@
-import { SymbolView, type AndroidSymbol, type SFSymbol } from 'expo-symbols';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { SymbolView, type AndroidSymbol, type SFSymbol } from "expo-symbols";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import {
   SonicColors,
   SonicRadius,
   SonicSpacing,
   SonicTypography,
-} from '@/constants/sonic';
+} from "@/constants/sonic";
 
 interface LibraryItemProps {
   title: string;
@@ -28,8 +28,10 @@ export default function LibraryItem({
 }: LibraryItemProps) {
   return (
     <Pressable onPress={onPress} style={styles.container}>
-      <View style={[styles.iconContainer, { backgroundColor: iconBackgroundColor }]}>
-        <SymbolView name={iconSymbol} size={24} tintColor={iconTintColor} />
+      <View
+        style={[styles.iconContainer, { backgroundColor: iconBackgroundColor }]}
+      >
+        {/* <SymbolView name={iconSymbol} size={24} tintColor={iconTintColor} /> */}
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title} numberOfLines={1}>
@@ -40,9 +42,13 @@ export default function LibraryItem({
         </Text>
       </View>
       <SymbolView
-        name={{ ios: 'chevron.right', android: 'chevron_right', web: 'chevron_right' }}
+        name={{
+          ios: "chevron.right",
+          android: "chevron_right",
+          web: "chevron_right",
+        }}
         size={20}
-        tintColor={SonicColors['on-surface-variant']}
+        tintColor={SonicColors["on-surface-variant"]}
       />
     </Pressable>
   );
@@ -50,10 +56,10 @@ export default function LibraryItem({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     height: 64,
-    backgroundColor: `${SonicColors['surface-container']}80`,
+    backgroundColor: `${SonicColors["surface-container"]}80`,
     borderRadius: SonicRadius.md,
     paddingHorizontal: SonicSpacing.three,
     gap: 12,
@@ -62,8 +68,8 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   textContainer: {
     flex: 1,
@@ -73,12 +79,12 @@ const styles = StyleSheet.create({
     fontSize: SonicTypography.bodyLg.fontSize,
     fontWeight: SonicTypography.bodyLg.fontWeight,
     lineHeight: SonicTypography.bodyLg.lineHeight,
-    color: SonicColors['on-surface'],
+    color: SonicColors["on-surface"],
   },
   subtitle: {
     fontSize: SonicTypography.bodySm.fontSize,
     fontWeight: SonicTypography.bodySm.fontWeight,
     lineHeight: SonicTypography.bodySm.lineHeight,
-    color: SonicColors['on-surface-variant'],
+    color: SonicColors["on-surface-variant"],
   },
 });

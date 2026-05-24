@@ -42,8 +42,8 @@ export default function PlayerScreen() {
         <ActionControls />
 
         <View style={styles.trackContainer}>
-          {assets.map((asset) => (
-            <CloudinaryAssetItem key={asset.asset_id} asset={asset} onPress={() => selectAsset(asset)} />
+          {assets.map((asset, i) => (
+            <CloudinaryAssetItem key={asset.asset_id} asset={asset} onPress={() => selectAsset(asset)} index={i} />
           ))}
         </View>
       </ScrollView>

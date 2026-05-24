@@ -20,6 +20,9 @@ export const useCloudinaryStore = create<CloudinaryStore>((set) => ({
     set({ isLoading: true, error: null });
     try {
       const assets = await fetchCloudinaryAssets(folder);
+      assets.forEach((a) => {
+        console.log(`[Cloudinary] ${a.public_id} | resource_type=${a.resource_type} | duration=${a.duration} | type=${typeof a.duration}`);
+      });
       set({
         assets,
         isLoading: false,
